@@ -237,7 +237,7 @@
 
         function updatePosition(col, newDigit, oldDigit) {
             if (newDigit != oldDigit) {
-                col.stop();
+                col.stop(true, true);
                 // if the number is 0 use the bottom 0 in the image, and change instantly to the top 0
                 if (newDigit == 0) {
                     col.animate({
