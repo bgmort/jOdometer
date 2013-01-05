@@ -76,7 +76,8 @@
         var digits = String(settings.counterStart).split('.'); // separate integers and decimals
         var numberOfDecimals = 0;
         var widthDot = 0;
-        var counterText = '9 0 1 2 3 4 5 6 7 8 9 0 1';
+        var counterText = '9012345678901';
+        counterText = '<div>' + counterText.split('').join('</div><div>') + '</div>';
         
         var right = settings.offsetRight;
         
@@ -147,7 +148,8 @@
             'position': 'absolute',
             'width': settings.widthNumber + 'px',
             'line-height': settings.heightNumber + 'px'
-        });
+        })
+        .find('div').height(settings.heightNumber);
         $this.find('.jodometer_dot').css({
             'position': 'absolute',
             'width': settings.widthDot + 'px',
